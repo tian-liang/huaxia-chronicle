@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>华夏编年 · 历史长卷</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Noto+Serif+SC:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <linearGradient id="rim" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#f0d090" stop-opacity=".9"/>
+    <stop offset=".5" stop-color="#c9963f" stop-opacity=".38"/>
+    <stop offset="1" stop-color="#7c4f1c" stop-opacity=".06"/>
+  </linearGradient>
+  <radialGradient id="halo">
+    <stop offset="0" stop-color="#d9a54a" stop-opacity=".14"/>
+    <stop offset="1" stop-color="#d9a54a" stop-opacity="0"/>
+  </radialGradient>
+</defs></svg>
+
+<div class="grain"></div>
+<div class="vignette"></div>
+
+<header class="topbar">
+  <a class="brand" href="#hero">
+    <span class="brand-mark">华</span>
+    <span class="brand-text">华夏编年<i>Huaxia Chronicle</i></span>
+  </a>
+  <nav class="top-nav" id="topNav"></nav>
+</header>
+
+<aside class="rail" id="rail">
+  <div class="rail-thread"></div>
+  <div class="rail-fill" id="railFill"></div>
+</aside>
+
+<button class="to-top" id="toTop" aria-label="返回顶部">
+  <svg viewBox="0 0 54 54" aria-hidden="true"><circle class="ring" id="ttRing" cx="27" cy="27" r="23"/></svg>
+  <span class="arw">↑</span>
+</button>
+
+<main>
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="hero-kicker f-lat reveal" style="--i:0">China · Dynastic Chronicle · 2070 BCE — 1912 CE</div>
+      <h1 class="reveal" style="--i:1">
+        <span class="thin f-lat">A Chronicle of Huaxia</span>
+        <span>华夏编年</span>
+        <span>历史长卷</span>
+      </h1>
+      <p class="hero-lead reveal" style="--i:2">
+        自夏后氏家天下，至宣统一纸退位诏书，四千年兴亡铺陈于一卷。
+        每一朝代是一段横向展开的编年史：起讫年代、都城、开国之君、帝王年号与重大事件，
+        以金色年份节点串起。历代人物自黑暗中窥视着他们各自的王朝——点开任意年份，可读其详情。
+      </p>
+      <div class="hero-stats reveal" style="--i:3">
+        <div class="stat"><b>16</b><span>时代 · Dynasties</span></div>
+        <div class="stat"><b>160</b><span>帝王 · Reigns</span></div>
+        <div class="stat"><b>~4000</b><span>年 · Years</span></div>
+        <div class="stat"><b>137</b><span>大事 · Events</span></div>
+      </div>
+    </div>
+
+    <div class="hero-gallery" id="heroGallery">
+      <span class="speck" style="left:12%;top:18%;animation-delay:.4s"></span>
+      <span class="speck" style="left:72%;top:34%;animation-delay:1.8s"></span>
+      <span class="speck" style="left:34%;top:66%;animation-delay:3.1s"></span>
+      <span class="speck" style="left:86%;top:72%;animation-delay:2.2s"></span>
+      <span class="speck" style="left:52%;top:10%;animation-delay:4.4s"></span>
+    </div>
+    <div class="vert">上下五千年 · 兴亡一卷中</div>
+  </section>
+
+  <div id="dynasties"></div>
+
+  <div class="ev-modal" id="evModal" aria-hidden="true">
+    <div class="ev-panel" role="dialog" aria-modal="true" aria-labelledby="evModalTitle">
+      <button class="ev-close" id="evClose" aria-label="关闭">✕</button>
+      <div class="ev-modal-kicker" id="evModalKicker"></div>
+      <div class="ev-modal-year" id="evModalYear"></div>
+      <h3 class="ev-modal-title" id="evModalTitle"></h3>
+      <div class="ev-modal-meta" id="evModalMeta"></div>
+      <p class="ev-modal-desc" id="evModalDesc"></p>
+      <p class="ev-modal-ext" id="evModalExt"></p>
+      <div class="ev-modal-nav">
+        <button id="evPrev">← 上一事件</button>
+        <span class="ev-modal-pos" id="evModalPos"></span>
+        <button id="evNext">下一事件 →</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="foot-grid">
+      <div>
+        <h4>凡例 · Notes</h4>
+        <p>本卷所记起讫年代，夏商周三代依「夏商周断代工程」之约数；秦以统一之年（前221）为始，
+        清以1636年改国号为始、1644年入关定鼎，1912年宣统退位为终。年号之制始于汉武帝建元元年（前140），
+        故先秦诸王但以王号纪年。五代十国并列一世，帝王择其要者录之；南朝北朝同卷，取其继统相承。</p>
+      </div>
+      <div>
+        <h4>取材 · Sources</h4>
+        <p>文字内容据《史记》《汉书》《后汉书》《三国志》《晋书》《隋书》《旧唐书》《新唐书》
+        《旧五代史》《新五代史》《宋史》《辽金元史》《明史》《清史稿》及通鉴、纪事本末诸体取其大要。
+        人物画像选自传世名迹（阎立本《历代帝王图》、《三才图会》、《元代帝半身像册》、明清宫廷御容等），
+        图片来自 Wikimedia Commons 公有领域藏品，仅作历史文化科普展示之用。</p>
+      </div>
+    </div>
+    <div class="foot-mark">华夏编年</div>
+  </footer>
+</main>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
