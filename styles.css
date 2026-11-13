@@ -173,8 +173,7 @@ button{font-family:inherit}
 .tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
 .tags li{font-family:var(--f-label);font-size:11px;letter-spacing:.16em;color:var(--gold);
   border:1px solid rgba(217,165,74,.32);padding:5px 13px;border-radius:999px;
-  background:rgba(217,165,74,.05);transition:all .35s}
-.tags li:hover{background:var(--gold);color:var(--ink);letter-spacing:.22em}
+  background:rgba(217,165,74,.05)}
 .dyn-figure{position:relative;justify-self:center;width:min(100%,470px);
   transform:translate3d(0,var(--py,0),0);will-change:transform}
 
@@ -197,7 +196,7 @@ button{font-family:inherit}
 .scroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--gold-dim),var(--gold));border-radius:3px}
 .track{position:relative;display:flex;align-items:stretch;gap:6px;height:392px;
   min-width:fit-content;
-  padding:26px 36px 22px 48px;
+  padding:24px 36px 24px 48px;
   background:
     linear-gradient(90deg,transparent 0%,rgba(217,165,74,.13) 5%,rgba(217,165,74,.13) 90%,transparent 100%) 0 50%/100% 5px no-repeat,
     linear-gradient(90deg,rgba(217,165,74,.1) 0%,rgba(217,165,74,.5) 5%,rgba(217,165,74,.5) 90%,rgba(217,165,74,.1) 100%) 0 50%/100% 1px no-repeat}
@@ -207,13 +206,17 @@ button{font-family:inherit}
   background:linear-gradient(90deg,rgba(217,165,74,.08) 0%,var(--gold) 2%,var(--gold) 98%,rgba(217,165,74,.08) 100%)}
 .ev{position:relative;flex:0 0 234px;min-width:234px;display:grid;grid-template-rows:1fr 66px 1fr;
   cursor:pointer;outline:none}
-.ev-node{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}
-.ev-dot{width:13px;height:13px;border-radius:50%;background:var(--ink);
+.ev-node{position:relative;grid-row:2}
+.ev-dot{position:absolute;left:50%;top:50%;margin:-6.5px 0 0 -6.5px;
+  width:13px;height:13px;border-radius:50%;background:var(--ink);
   border:1px solid var(--gold);box-shadow:0 0 0 4px rgba(217,165,74,.12),0 0 16px rgba(217,165,74,.55);
   transition:transform .4s,background .4s}
 .ev:hover .ev-dot,.ev:focus-visible .ev-dot{transform:scale(1.55);background:var(--gold)}
-.ev-year{font-family:var(--f-label);font-size:11.5px;letter-spacing:.12em;color:var(--gold);
+.ev-year{position:absolute;left:50%;transform:translateX(-50%);
+  font-family:var(--f-label);font-size:11.5px;letter-spacing:.12em;color:var(--gold);
   white-space:nowrap}
+.ev-up .ev-year{bottom:calc(50% + 12px)}
+.ev-down .ev-year{top:calc(50% + 12px)}
 .ev-card{position:relative;width:100%;padding:0 10px}
 .ev-up .ev-card{grid-row:1;align-self:end;padding-bottom:16px}
 .ev-down .ev-card{grid-row:3;align-self:start;padding-top:16px}
@@ -382,7 +385,7 @@ footer p{color:var(--dim);font-size:.86rem;font-weight:300;text-indent:2em;text-
   .sec-head h3{letter-spacing:.22em;font-size:1.12rem}
   .sec-head h3 i{letter-spacing:.22em;margin-left:.8em}
   .hint{font-size:9px;letter-spacing:.2em}
-  .track{height:336px;padding:22px 30px 18px 38px}
+  .track{height:336px;padding:20px 30px 20px 38px}
   .ev{flex:0 0 196px;min-width:196px}
   .ev-title{font-size:14px;letter-spacing:.1em}
   .ev-desc{font-size:11px;line-height:1.8}
